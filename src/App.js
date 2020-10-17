@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Info from './components/Info';
+import Map from './components/Map';
+import State from './context/State';
+
+import fondo from './img/fondo.jpg';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <State>
+      <div className="container" style={{height: '100vh', backgroundImage: `url(${fondo})`, backgroundSize: 'cover'}}>
+      <div className="row container">
+      <div className="col-8">
+        <Info />
+      </div>
+      <div className="col-4" style={{height: '500px', marginTop: '65px'}}>
+        <Map/>
+      </div>
+      </div>
+      </div>
+    </State>
   );
 }
 
