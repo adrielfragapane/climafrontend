@@ -6,21 +6,21 @@ const MapContainer = props => {
 
   const google = props.google;
 
-  const { coordenadas } = useContext(Context);
+  const { coordinates } = useContext(Context);
 
   useEffect(() => {
 
-  }, [coordenadas]);
+  }, [coordinates]);
 
   return (
     <Map
       google={google}
       zoom={8}
       initialCenter={{ lat: -34.625528, lng: -58.4482137 }}
-      center={coordenadas}>
+      center={coordinates}>
       <Marker mapCenter={true}
         icon={{ url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png" }}
-        name={'Current location'} position={coordenadas}>
+        name={'Current location'} position={coordinates}>
       </Marker>
     </Map>
   );

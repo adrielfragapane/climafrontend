@@ -20,7 +20,7 @@ const Datos = () => {
     // Método para obtener los nombres de las ciudades
     const getCities = async () => {
         const token = localStorage.getItem('accessToken');
-        const res = await axios.get(`https://climabackend.herokuapp.com//weather/cities`, { headers: { 'authorization': token } });
+        const res = await axios.get(`https://climabackend.herokuapp.com/weather/cities`, { headers: { 'authorization': token } });
         if(res.data.status === 403) {
             localStorage.removeItem('accessToken');
             window.location.reload();
