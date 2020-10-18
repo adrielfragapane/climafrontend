@@ -20,7 +20,7 @@ const Datos = () => {
     // Método para obtener los nombres de las ciudades
     const getCities = async () => {
         const token = localStorage.getItem('accessToken');
-        const res = await axios.get(`http://localhost:4000/weather/cities`, { headers: { 'authorization': token } });
+        const res = await axios.get(`https://climabackend.herokuapp.com//weather/cities`, { headers: { 'authorization': token } });
         if(res.data.status === 403) {
             localStorage.removeItem('accessToken');
             window.location.reload();
@@ -35,7 +35,7 @@ const Datos = () => {
     // Método para obtener la información de una ciudad
     const getWeather = async (city) => {
         const token = localStorage.getItem('accessToken');
-        const res = await axios.get(`http://localhost:4000/weather/${city}`, { headers: { 'authorization': token } });
+        const res = await axios.get(`https://climabackend.herokuapp.com/weather/${city}`, { headers: { 'authorization': token } });
         if(res.data.status === 403) {
             console.log(res.message)
             localStorage.removeItem('accessToken');

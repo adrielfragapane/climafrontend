@@ -15,7 +15,7 @@ const Login = () => {
             if (email === '' || password === '') {
                 return;
             }
-            const res = await axios.post(`http://localhost:4000/user/${login ? 'login' : 'signin'}`, { email: email, password: password });
+            const res = await axios.post(`https://climabackend.herokuapp.com/user/${login ? 'login' : 'signin'}`, { email: email, password: password });
 
             if (res.data.status === 200) {
                 const { accessToken } = res.data;
