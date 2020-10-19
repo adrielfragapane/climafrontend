@@ -25,3 +25,5 @@ Cuando se obtienen los datos, se renderizan los mismos, mas una imágen que tamb
 
 En las consultas se agrega el header "Authorization" con el accessToken obtenido, si el token es válido, la API devolverá los datos. En caso de no ser válido, regresará un status 403, y se elimina el token almacenado en localStorage y se refresca la vista para visualizar nuevamente el componente "Login".
 
+El token tiene 30 segundos de validez.
+
